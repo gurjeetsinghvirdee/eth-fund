@@ -15,6 +15,10 @@ const CreateCampaign = () => {
     deadline: '',
     image: ''
   });
+   
+  const handleSubmit = () => {
+    
+  }
 
   return (
     <div className='bg-[#1c1c24] flex justify-center items-center flex-col
@@ -25,6 +29,9 @@ const CreateCampaign = () => {
         text-[18px] leading-[38px] text-white'> Start a Campaign
         </h1>
       </div>
+
+      <form onSubmit={handleSubmit} className='w-full mt-[65px] flex flex-col gap-[30px]'>
+      </form>
     </div>
   )
 }
