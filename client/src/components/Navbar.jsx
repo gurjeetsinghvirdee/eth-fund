@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { useStateContext } from '../context';
 import { CustomButton } from './';
 import { logo, menu, search, thirdweb } from '../assets';
 import { navlinks } from '../constants';
@@ -9,8 +10,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState('dashboard');
   const [toggleDrawer, setToggleDrawer] = useState(false)
+  const { connect, address } = useStateContext();
 
-  const address = '0xabcd';
   
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
@@ -30,7 +31,7 @@ const Navbar = () => {
           styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6d6d]'}
           handleClick={() => {
             if(address) navigate('create-campaign')
-            else 'connect()'
+            else connect();
           }}
         />
 
@@ -47,7 +48,7 @@ const Navbar = () => {
           <div className="sm:hidden flex justify-between items-center relative">
             <div className='w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] 
               flex justify-center items-center cursor-pointer'>
-              <img src={thirdweb} alt="user" className='w-[60%] h-[60%] object-contain' />
+              <img src={logo} alt="user" className='w-[60%] h-[60%] object-contain' />
             </div>
 
             <img 
@@ -91,7 +92,7 @@ const Navbar = () => {
                     styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6d6d]'}
                     handleClick={() => {
                       if(address) navigate('create-campaign')
-                      else 'connect()'
+                      else connect();
                     }}
                   />
                 </div>
