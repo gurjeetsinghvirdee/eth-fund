@@ -12,11 +12,11 @@ const CreateCampaign = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { createCampaign } = useStateContext();
   const [form, setForm] = useState({
-    name: '',
-    title: '',
-    description: '',
-    deadline: '',
-    image: ''
+    _name: '',
+    _title: '',
+    _description: '',
+    _deadline: '',
+    _image: ''
   });
 
   const handleFormFieldChange = (filedName, e) => {
