@@ -1,8 +1,8 @@
 ## Eth Fund - A Decentralized Crowdfunding Platform
 
-#### Eth Fund is a decentralized crowdfunding platform built on Ethereum, designed to empower individuals and organizations to raise funds for their projects, causes, and initiatives. With a seamless user experience, powered by Vite+React, Hardhat & Tailwind CSS, Eth Fund provides a secure and transparent way for creators and backers to come together in a trustless environment.
+<p>Eth Fund is a decentralized crowdfunding platform built on Ethereum, designed to empower individuals and organizations to raise funds for their projects, causes, and initiatives. With a seamless user experience, powered by Vite+React, Hardhat & Tailwind CSS, Eth Fund provides a secure and transparent way for creators and backers to come together in a trustless environment.<p>
 
-### Key Features:
+#### Key Features:
 
 - Decentralization: Eth Fund leverages the Ethereum blockchain to ensure that fundraising campaigns are transparent, immutable, and censorship-resistant.
 
