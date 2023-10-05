@@ -5,18 +5,11 @@
 #### Key Features:
 
 - Decentralization: Eth Fund leverages the Ethereum blockchain to ensure that fundraising campaigns are transparent, immutable, and censorship-resistant.
-
-- User-Friendly Interface: Built with React and enhanced with Tailwind CSS, the platform offers an intuitive and visually appealing user interface.
-
+- User-Friendly Interface: Built with Vite + React and enhanced with Tailwind CSS, the platform offers an intuitive and visually appealing user interface.
 - Smart Contract Integration: Eth Fund utilizes Hardhat to facilitate the creation and execution of smart contracts for crowdfunding campaigns.
-
 - Secure Transactions: Smart contracts handle all transactions, ensuring that funds are securely managed and disbursed based on campaign milestones or deadlines.
-
 - Empowering Creators: Eth Fund empowers creators by providing a global platform to showcase their projects and attract backers.
-
 - Backer Confidence: Backers can confidently support campaigns, knowing that their contributions are governed by smart contracts, providing transparency and accountability.
-
-- Community-Driven: Eth Fund is open-source and community-driven, with opportunities for contributors to improve and expand the platform.
 
 <!-- Getting Started:
 
