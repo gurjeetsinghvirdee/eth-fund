@@ -1,26 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ethers } from 'ethers';
 
 import { useStateContext } from '../context';
-import { CustomButton } from '../components';
+import { CustomButton, CountBox, Loader } from '../components';
 import { calculateBarPercentage, daysLeft } from '../utils';
 import { thirdweb } from '../assets';
-import { CountBox } from '../components';
 
 const CampaignDetails = () => {
   const { state } = useLocation();
-  const { getDonation, contract, address } = useStateContext();
+  const navigate = useNavigate();
+  const { donate, getDonations, contract, address } = useStateContext();
 
   const [isLoading, setIsLoading] = useState(false);
   const [amount, setAmount] = useState('');
   const [donators, setDonators] = useState([]);
 
   const remainingDays = daysLeft(state.deadline);
+
+  const fetchDonators = async () => {
+    const data = await getDonations(state.pId);
+
+    setDonators(data);
+  }
+
+  const handleDonate = async () => {
+    setIsLoading(true);
+
+    await donate(state.pId, amount);
+
+    navigate('/')
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    if(contract) fetchDonators();
+  }, [contract, address])
   
   return (
     <div>
-      {isLoading && 'Loading...'}
+      {isLoading && <Loader /> }
 
       <div className='w-full flex md:flex-row flex-col mt-10 gap-[30px]'>
         <div className='flex-1 flex-col'>
@@ -69,8 +88,9 @@ const CampaignDetails = () => {
 
               <div className='mt-[20px] flex flex-col gap-4'>
                 {donators.length > 0 ? donators.map((item, index) => (
-                  <div>
-                    DONATOR
+                  <div key={`${item.donator}-${index}`} className='flex justify-between items-center gap-4'>
+                    <p className='font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-11'>{index + 1}. {item.donator}</p>
+                    <p className='font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-11'>{item.donation}</p>
                   </div>
                 )) : (
                   <p className='font-epilogue font-normal text-[12px] text-[#808191] leading-[26px] text-justify'>
@@ -98,6 +118,18 @@ const CampaignDetails = () => {
                 leading-[30px] placeholder:text-[#4b5264] rounded-[10px]" 
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
+              />
+
+              <div className='my-[20px] p-4 bg-[#13131a] rounded-[10px]'>
+                <h4 className='font-epilogue font-semibold text-white text-[14px] leading-[22px]'>Back it because you believe it</h4>
+                <p className='font-epilogue text-[#808191] mt-[20px] font-normal leading-[22px]'>Please Support the Campaign, God will bless You ❤️</p>
+              </div>
+
+              <CustomButton 
+                btnType="button"
+                title="Fund Campaign"
+                styles="w-full bg-[#8c6dfd]"
+                handleClick={handleDonate}
               />
             </div>
           </div>
