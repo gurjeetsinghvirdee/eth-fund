@@ -2,7 +2,6 @@ import React, { useContext, createContext } from 'react';
 
 import { useAddress, useContract, useMetamask, useContractWrite } from '@thirdweb-dev/react';
 import { ethers } from 'ethers';
-import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
 
 const StateContext = createContext();
 
@@ -35,7 +34,7 @@ export const StateContextProvider = ({ children }) => {
   const getCampaigns = async () => {
     const campaigns = await contract.call('getCampaigns');
 
-    const parsedCampaings = campaigns.map((campaign, i) => ({
+    const parsedCampaigns = campaigns.map((campaign, i) => ({
       owner: campaign.owner,
       title: campaign.title,
       description: campaign.description,
@@ -46,7 +45,7 @@ export const StateContextProvider = ({ children }) => {
       pId: i
     }));
 
-    return parsedCampaings;
+    return parsedCampaigns;
   }
 
   const getUserCampaigns = async () => {
