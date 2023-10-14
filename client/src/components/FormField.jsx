@@ -7,7 +7,7 @@ const FormField = ({ labelName, placeholder, inputType, isTextArea, value, handl
             <span className='font-epilogue font-medium text-[14px] 
             leading-[22px] text-[#808191] mb-[10px]'>{labelName}</span>
         )}
-        {isTextArea ? (
+       {isTextArea ? (
             <textarea 
                 required
                 value={value}
