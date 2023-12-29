@@ -13,6 +13,14 @@
 - Empowering Creators: Eth Fund empowers creators by providing a global platform to showcase their projects and attract backers.
 - Backer Confidence: Backers can confidently support campaigns, knowing that their contributions are governed by smart contracts, providing transparency and accountability.
 
+#### Campaign Creation
+
+https://github.com/gurjeetsinghvirdee/eth-fund/assets/73753957/48f53026-6fe1-4225-a62a-e3cd7a8b6ace
+
+#### Funding a Campaign
+
+https://github.com/gurjeetsinghvirdee/eth-fund/assets/73753957/27fc7ff0-0e5d-4222-997f-d3c70fd8683c
+
 <!-- Getting Started:
 
 Installation Guide
