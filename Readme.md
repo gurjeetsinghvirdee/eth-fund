@@ -1,3 +1,4 @@
+<!-- GitAds-Verify: W4EJJS39B6R8P6MEMZJYOREVF22C2V58 -->
 ![image](https://github.com/gurjeetsinghvirdee/eth-fund/assets/73753957/46eb47e3-d891-461c-8cf1-20ad92dd49c2)
 
 # Eth Fund - A Decentralized Crowdfunding Platform
